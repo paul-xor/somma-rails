@@ -1,32 +1,23 @@
 <%= form_with(model: campaign, local: true) do |form| %>
-  <% if campaign.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
 
-      <ul>
-      <% campaign.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/errors', obj: @campaign %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name %> <br>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :due_start %>
+    <%= form.label :due_start %> <br>
     <%= form.datetime_select :due_start %>
   </div>
 
   <div class="field">
-    <%= form.label :due_end %>
+    <%= form.label :due_end %> <br>
     <%= form.datetime_select :due_end %>
   </div>
 
-  <div class="actions">
+  <div class="actions"> <br>
     <%= form.submit %>
   </div>
 <% end %>

@@ -1,25 +1,22 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
 
-  
   def index
     @campaigns = Campaign.all
   end
 
-  
   def show
+    @posts = @campaign.posts.order(created_at: :desc)
+    @post = Post.new()
   end
 
- 
   def new
     @campaign = Campaign.new
   end
 
-  
   def edit
   end
 
-  
   def create
     @campaign = Campaign.new(campaign_params)
 
@@ -34,7 +31,6 @@ class CampaignsController < ApplicationController
     end
   end
 
-  
   def update
     respond_to do |format|
       if @campaign.update(campaign_params)
@@ -47,7 +43,6 @@ class CampaignsController < ApplicationController
     end
   end
 
-  
   def destroy
     @campaign.destroy
     respond_to do |format|
@@ -57,12 +52,12 @@ class CampaignsController < ApplicationController
   end
 
   private
-    
+    # Use callbacks to share common setup or constraints between actions.
     def set_campaign
       @campaign = Campaign.find(params[:id])
     end
 
-    
+    # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
       params.require(:campaign).permit(:name, :due_start, :due_end)
     end

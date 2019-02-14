@@ -2,25 +2,42 @@
 
 <h1>Campaigns</h1>
 
-<table>
+<table class="table table-hover table-info">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Due start</th>
-      <th>Due end</th>
-      <th colspan="3"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Due start</th>
+      <th scope="col">Due end</th>
+      <th scope="col" colspan="3" class="col-3">Actions</th>
+      
     </tr>
   </thead>
 
   <tbody>
     <% @campaigns.each do |campaign| %>
-      <tr>
+      <tr class="table-secondary class="col-3">
         <td><%= campaign.name %></td>
         <td><%= campaign.due_start %></td>
         <td><%= campaign.due_end %></td>
-        <td><%= link_to 'Show', campaign %></td>
-        <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
-        <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+            <%= link_to campaign, class: "btn btn-sm btn-outline-info" do%>
+                <i class="far fa-eye"></i>
+                Show
+            <% end %>
+        </td>
+        <td>
+            <%= link_to edit_campaign_path(campaign), class: "btn btn-sm btn-outline-success" do%>
+                <i class="fas fa-highlighter"></i>
+                Edit
+            <% end %>
+        </td>
+        <td>
+            <%= link_to campaign, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class:"btn btn-sm btn-outline-danger" do%>
+                <i class="far fa-trash-alt"></i>
+                Delete
+            <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

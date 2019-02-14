@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<%= link_to '< Back', campaigns_path %> |
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> 
 
 <p>
   <strong>Name:</strong>
@@ -15,5 +17,14 @@
   <%= @campaign.due_end %>
 </p>
 
-<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
-<%= link_to 'Back', campaigns_path %>
+<small>
+    Created <%= time_ago_in_words(@campaign.created_at) %> ago
+  |
+    Last edited <%= time_ago_in_words(@campaign.updated_at) %> ago
+</small><br>
+
+<h2>List Of Posts</h2>
+
+<%= render 'posts/post' %>
+
+<%= link_to 'New Post >', new_campaign_post_path(@campaign) %>
