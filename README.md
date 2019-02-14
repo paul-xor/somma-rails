@@ -1,0 +1,4 @@
+# SOMMA - application
+backend
+
+
