@@ -1,0 +1,47 @@
+commit 470fb378782cf7cb99283cc66303515a14a3db80
+Author: Pavel Smolov <palexsmol@gmail.com>
+Date:   Sat Feb 16 14:10:18 2019 -0800
+
+    edit app controller, devise views and omniauth routes
+
+commit 9dd204df41f5148ee88e744284341e93c26ed79f
+Author: Pavel Smolov <palexsmol@gmail.com>
+Date:   Fri Feb 15 20:55:24 2019 -0800
+
+    add user model and FB credentials
+
+commit c0d9a48698c753789cb2b8094197f10e5a692b9e
+Author: Pavel Smolov <palexsmol@gmail.com>
+Date:   Thu Feb 14 01:42:07 2019 -0800
+
+    add flash and jumbotron
+
+commit f008f16d25c57e3a63f628c07b31dcf180e71194
+Author: Pavel Smolov <palexsmol@gmail.com>
+Date:   Thu Feb 14 00:54:56 2019 -0800
+
+    user auth
+
+commit c6b62b62d3bea00b9e1a57e24033ed74ad0cc651
+Author: Pavel Smolov <palexsmol@gmail.com>
+Date:   Wed Feb 13 23:34:28 2019 -0800
+
+    update homepage view
+
+commit 86efe36286413da266062d84973582a5075f8f8b
+Author: Pavel Smolov <palexsmol@gmail.com>
+Date:   Wed Feb 13 22:47:46 2019 -0800
+
+    add association post-campaign, CRUD and bootstrap
+
+commit 45286f613f5aee3c25a5c952b781978edbc61374
+Author: Pavel Smolov <palexsmol@gmail.com>
+Date:   Wed Feb 13 21:16:19 2019 -0800
+
+    add welcome page and campaign CRUD
+
+commit 593998c0d24e018046ed2913b017903732243fdd
+Author: Pavel Smolov <palexsmol@gmail.com>
+Date:   Wed Feb 13 20:40:48 2019 -0800
+
+    first commit
