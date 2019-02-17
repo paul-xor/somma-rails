@@ -1,26 +1,8 @@
-commit 470fb378782cf7cb99283cc66303515a14a3db80
+commit 47bb1f50eb16a57a3c4eec226e16ed6ea0b8660b
 Author: Pavel Smolov <palexsmol@gmail.com>
-Date:   Sat Feb 16 14:10:18 2019 -0800
+Date:   Sat Feb 16 18:49:18 2019 -0800
 
-    edit app controller, devise views and omniauth routes
-
-commit 9dd204df41f5148ee88e744284341e93c26ed79f
-Author: Pavel Smolov <palexsmol@gmail.com>
-Date:   Fri Feb 15 20:55:24 2019 -0800
-
-    add user model and FB credentials
-
-commit c0d9a48698c753789cb2b8094197f10e5a692b9e
-Author: Pavel Smolov <palexsmol@gmail.com>
-Date:   Thu Feb 14 01:42:07 2019 -0800
-
-    add flash and jumbotron
-
-commit f008f16d25c57e3a63f628c07b31dcf180e71194
-Author: Pavel Smolov <palexsmol@gmail.com>
-Date:   Thu Feb 14 00:54:56 2019 -0800
-
-    user auth
+    facebook authentication
 
 commit c6b62b62d3bea00b9e1a57e24033ed74ad0cc651
 Author: Pavel Smolov <palexsmol@gmail.com>
