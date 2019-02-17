@@ -26,13 +26,14 @@ class PostsController < ApplicationController
     
     @post = Post.new(post_params)
     @post.campaign= @campaign
+    @post.user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to campaign_path(@campaign.id), notice: 'Post was successfully created.' }
         # format.json { render :show, status: :created, location: @post }
       else
-        format.html { render "campaign/show" }
-        # format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.html { redirect_to campaign_path(@campaign.id), notice: 'Post error: {#@post.errors}' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,7 +62,11 @@ class PostsController < ApplicationController
   end
 
   private
-    
+
+    def user
+      current_user
+    end
+
     def set_post
       @post = Post.find(params[:id])
     end
@@ -72,6 +77,6 @@ class PostsController < ApplicationController
 
     
     def post_params
-      params.require(:post).permit(:title, :body, :post_date)
+      params.require(:post).permit(:title, :body, :post_date, :user_id)
     end
 end
