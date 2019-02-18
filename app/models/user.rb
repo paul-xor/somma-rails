@@ -30,5 +30,4 @@ class User < ApplicationRecord
     @facebook ||= Koala::Facebook::API.new(oauth_token)
   end
 
-
 end
