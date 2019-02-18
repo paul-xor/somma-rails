@@ -257,7 +257,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'],
-  callback_url: "http://localhost:3001/users/auth/facebook/callback"
+  callback_url: "http://localhost:3001/users/auth/facebook/callback",
+  scope: "email, publish_stream, groups_access_member_info, publish_to_groups
+  publish_actions, user_posts, manage_pages, publish_pages"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
