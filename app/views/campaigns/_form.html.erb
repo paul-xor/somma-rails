@@ -9,7 +9,8 @@
 
   <div class="field">
     <%= form.label :due_start %> <br>
-    <%= form.datetime_select :due_start %>
+    <%=form.datetime_local_field :due_start, class:"form-control"%>
+    <%# form.datetime_select :due_start %>
   </div>
 
   <div class="field">
