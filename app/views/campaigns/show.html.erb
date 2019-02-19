@@ -25,6 +25,25 @@
 
 <h2>List Of Posts</h2>
 
+<div class="form-group">
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="">
+      <label class="custom-control-label" for="customSwitch1">Switch view</label>
+    </div>
+</div>
+
+
+
 <%= render 'posts/post' %>
 
+<%= render 'posts/cal-view' %>
+
+
 <%= link_to 'New Post >', new_campaign_post_path(@campaign) %>
+
+<script>
+document.querySelector("#customSwitch1").addEventListener("click", () =>{
+document.querySelector("#calendar-posts").toggleAttribute("hidden")
+document.querySelector("#posts").toggleAttribute("hidden")
+})
+</script>

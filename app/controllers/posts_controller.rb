@@ -4,9 +4,10 @@ class PostsController < ApplicationController
   before_action :find_campaign
 
 
-  # def index
-  #   @posts = Post.all
-  # end
+  def index
+    @posts = Post.all
+    @posts_by_date = @posts.group_by(&:published_on)
+  end
 
   def show
     

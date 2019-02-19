@@ -261,9 +261,9 @@ Devise.setup do |config|
   scope: "email, groups_access_member_info, publish_to_groups, user_posts, 
   manage_pages, publish_pages"
 
-  # config.omniauth :facebook, ENV['INSTAGRAM_KEY'], ENV['INSTAGRAM_SECRET'],
-  # callback_url: "http://localhost:3001/users/auth/instagram/callback",
-  # scope: "basic, public_content, comments"
+  config.omniauth :instagram, ENV['INSTAGRAM_KEY'], ENV['INSTAGRAM_SECRET'],
+  callback_url: "http://localhost:3001/users/auth/instagram/callback",
+  scope: "basic, public_content, comments"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
