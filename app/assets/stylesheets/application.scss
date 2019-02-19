@@ -14,9 +14,16 @@
  *= require_self
  */
  //@import "bootstrap";
-
+ .social-note {
+  // border: 2px solid #333333;
+  padding: 15px;
+  margin: 6px;
+  border-radius: 8px;
+  //width: 15px;
+  float: left;
+}
  .social-block {
-    border: 2px solid #333333;
+    border: 2px solid #c1c16c;
     padding: 15px;
     margin: 6px;
     border-radius: 8px;
