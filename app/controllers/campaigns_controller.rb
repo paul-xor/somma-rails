@@ -9,6 +9,7 @@ class CampaignsController < ApplicationController
   def show
     @posts = @campaign.posts.order(created_at: :desc)
     @post = Post.new()
+    @posts_by_date = @posts.group_by { |post| post.post_date.to_date }
   end
 
   def new

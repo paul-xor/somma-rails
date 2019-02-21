@@ -1,8 +1,13 @@
 
 <div id="calendar-posts" hidden>
     <%= calendar do |date| %>
-        <%= date.day %>
-            
-        
+            <%= date.day %>
+            <% if @posts_by_date[date]  %>
+                <ul>
+                    <% @posts_by_date[date].each do |post| %>
+                        <li><%= link_to post.title, campaign_post_path(post) %></li>
+                    <% end %>
+                </ul>
+            <% end %>
     <% end %>
 </div>

@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @posts_by_date = @posts.group_by(&:published_on)
+    @posts_by_date = @posts.group_by { |post| post.post_date.to_date }
   end
 
   def show
