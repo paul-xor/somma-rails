@@ -23,6 +23,49 @@
         <%= link_to 'About', about_path, class: "nav-link" %>
       </li>
     </ul>
+
+      <div class='social-block'>
+          <% if current_user %>
+              <div>
+                  <%= current_user.name %><br>
+                  <%# image_tag(current_user.image) %>
+              </div>
+          <% end %>
+          <% unless current_user %>
+              <%= link_to user_facebook_omniauth_authorize_path do %>
+              <i class="fab fa-facebook-f" style="color:white"></i>
+              <% end %>
+          <% else %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fab fa-facebook" style="color:blue"><small>Logout</small></i>
+              <% end %>
+          <% end %>
+      </div>
+      <div class='social-block'>
+          
+          <% unless current_user %>
+              <%= link_to root_path do %>
+              <i class="fab fa-instagram" style="color:white"></i>
+              <% end %>
+          <% else %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fab fa-instagram" style="color:blue"></i>
+              <% end %>
+          <% end %>
+      </div>
+
+      <div class='social-block'>
+          
+          <% unless current_user %>
+              <%= link_to root_path do %>
+              <i class="fab fa-twitter" style="color:white"></i>
+              <% end %>
+          <% else %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fab fa-twitter-square" style="color:blue"></i>
+              <% end %>
+          <% end %>
+      </div>
       
     </form>
   </div>
