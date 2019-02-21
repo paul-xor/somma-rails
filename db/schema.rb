@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_17_051913) do
+ActiveRecord::Schema.define(version: 2019_02_20_074531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 2019_02_17_051913) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.boolean "post_on_facebook"
+    t.boolean "post_on_instagram"
+    t.boolean "post_on_twitter"
     t.index ["campaign_id"], name: "index_posts_on_campaign_id"
   end
 
@@ -46,6 +49,9 @@ ActiveRecord::Schema.define(version: 2019_02_17_051913) do
     t.string "uid"
     t.string "name"
     t.text "image"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.text "oauth_raw_data"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

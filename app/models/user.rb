@@ -29,5 +29,23 @@ class User < ApplicationRecord
   def facebook
     @facebook ||= Koala::Facebook::API.new(oauth_token)
   end
+  
+  def fb_single_page
+    fb_pages = Koala::Facebook::API.new(oauth_token).get_connections("me","accounts")
 
+    #We access token and page id: fb_pages[0]['access_token']; fb_pages[0]['id']
+    @fb_single_page = Koala::Facebook::API.new(fb_pages[0]['access_token'])
+    @fb_page_id = fb_pages[0]['id']
+    #fb_single_page.put_connections(fb_pages[0]['id'], 'feed', :message => message, :picture => picture_url, :link => link_url)
+  end
+
+  def fb_post_on_page(body)
+    fb_pages = Koala::Facebook::API.new(oauth_token).get_connections("me","accounts")
+
+    #We access token and page id: fb_pages[0]['access_token']; fb_pages[0]['id']
+    fb_single_page = Koala::Facebook::API.new(fb_pages[0]['access_token'])
+    fb_page_id = fb_pages[0]['id']
+    fb_single_page.put_connections(fb_page_id, 'feed', :message => "#{body}")
+  end
+    
 end

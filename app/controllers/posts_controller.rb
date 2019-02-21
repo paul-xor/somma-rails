@@ -26,8 +26,11 @@ class PostsController < ApplicationController
   def create
     
     @post = Post.new(post_params)
+    @post.post_on_facebook = params[:post][:post_on_facebook] == "1"
     @post.campaign= @campaign
     @post.user = current_user
+
+    #byebug
     respond_to do |format|
       if @post.save
         format.html { redirect_to campaign_path(@campaign.id), notice: 'Post was successfully created.' }
@@ -78,6 +81,6 @@ class PostsController < ApplicationController
 
     
     def post_params
-      params.require(:post).permit(:title, :body, :post_date, :user_id)
+      params.require(:post).permit(:title, :body, :post_date, :user_id, :post_on_facebook)
     end
 end
